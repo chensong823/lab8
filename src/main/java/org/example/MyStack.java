@@ -6,34 +6,32 @@ import java.util.EmptyStackException;
 public class MyStack<E> {
 
     private ArrayList<E> delegate;
-    private int size;
+
+
 
     public MyStack() {
         delegate = new ArrayList<>();
-        size=0;
     }
 
     public void push(E e) {
         delegate.add(e);
-        size++;
     }
 
     public E pop() {
-        if (delegate.isEmpty())
+        if (isEmpty())
             throw new EmptyStackException();
-        size--;
-        E e =delegate.get(size);
-        delegate.remove(size);
+        E e =delegate.get(size()-1);
+        delegate.remove(size()-1);
 
         return e;
     }
     public int size()
     {
-        return size;
+        return delegate.size();
     }
     public boolean isEmpty()
     {
-        return size==0;
+        return delegate.isEmpty();
     }
 
 }

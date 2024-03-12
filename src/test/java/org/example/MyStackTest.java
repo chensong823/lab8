@@ -12,12 +12,16 @@ public class MyStackTest
 {
     private MyStack<Integer> myStack;
 
+//    @Override
+//    protected void setUp() throws Exception {
+//        myStack=new MyStack<>();
+//    }
+
     @Override
-    protected void setUp() throws Exception {
-        myStack=new MyStack<>();
-    }
+    protected void
 
     public void testPush(){
+        myStack=new MyStack<>();
         assertTrue(myStack.isEmpty());
        myStack.push(1);
        assertFalse(myStack.isEmpty());
